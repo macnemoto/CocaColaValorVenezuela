@@ -8,8 +8,8 @@ fetch('https://s3.amazonaws.com/dolartoday/data.json')
 
 
 .then(function(neko) {
-    console.log(neko.usd.transferencia);
-    precio.innerHTML='<p>'+neko.usd.transferencia+'</p>';
+    console.log(neko.USD.transferencia);
+    precio.innerHTML='<em>El precio de la coca cola es:</em> <strong>'+neko.USD.transferencia+'</strong>';
   
 }); 
 
