@@ -33,8 +33,8 @@ fetch('https://s3.amazonaws.com/dolartoday/data.json')
     console.log(enteroRetirnable);
     console.log(enteroPesis);
     precio.innerHTML='<em>El precio de la lechuga es:</em> <strong>'+dolarValor+' $</strong>';
-  pesiss.innerHTML='<em>La Pesis 1/2 esta en:</em> <strong>'+enteroPesis+' BsS</strong>';
- retornablee.innerHTML='<em>La Retornable esta en:</em> <strong>'+enteroRetirnable+' BsS</strong>';
+    pesiss.innerHTML='<em>La Pesis 1/2 esta en:</em> <strong>'+enteroPesis+' BsS</strong>';
+    retornablee.innerHTML='<em>La Retornable esta en:</em> <strong>'+enteroRetirnable+' BsS</strong>';
 }); 
 
 
