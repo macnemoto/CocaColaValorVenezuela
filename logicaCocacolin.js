@@ -13,8 +13,8 @@ fetch('https://s3.amazonaws.com/dolartoday/data.json')
 .then(function(neko) {
 
     var dolarValor = neko.USD.transferencia;
-    var retornablevalor = 0.74;
-    var pesisvalor = 1.07;
+    var retornablevalor = 0.84;
+    var pesisvalor = 1.17;
 
     var totalRetornable = retornablevalor * neko.USD.transferencia;
     var totalpesis =  pesisvalor* neko.USD.transferencia ;
