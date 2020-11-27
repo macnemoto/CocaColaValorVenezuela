@@ -1,3 +1,7 @@
 body {
-    background: blueviolet;
+    background-color: blueviolet;
+}
+
+#prueba {
+    background: url(/img/pan.jpg);
 }
