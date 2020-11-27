@@ -41,3 +41,30 @@ fetch('https://s3.amazonaws.com/dolartoday/data.json')
 
 
 }
+
+class Producto {
+constructor (nombre , precioP) {
+    this.precioP = precioP;
+    this.nombre = nombre;
+
+
+}
+calcular () {
+    fetch('https://s3.amazonaws.com/dolartoday/data.json')
+.then(function(response) {
+    return response.json();
+  })
+ 
+    var nekoo = this.neko.USD.transferencia;
+    console.log(`hola funciono el precios es ${this.precioP} y ${this.nombre}  ${nekoo}`)
+
+ 
+
+}
+
+
+}
+
+let producto = new Producto ('Retornables2', 0.84);
+
+producto.calcular();
