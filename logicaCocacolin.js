@@ -50,17 +50,49 @@ function precioActualizado() {
 
 class Producto {
   constructor() {}
-  calcular(nombre, precioP) {
-    fetch("https://s3.amazonaws.com/dolartoday/data.json").then(function (
-      response
-    ) {
-      return response.json();
-    });
-    var nekoo = this.neko.USD.transferencia;
-    console.log(
-      `hola funciono el precios es ${this.precioP} y ${this.nombre}  ${nekoo}`
-    );
+  calcular(nombre, precioP, img) {
+    fetch("https://s3.amazonaws.com/dolartoday/data.json")
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (neko) {
+        var dollarValue = neko.USD.transferencia;
+        var totalValue = dollarValue * precioP;
+
+        totalValue = new Intl.NumberFormat("de-DE", {
+          maximumSignificantDigits: 3,
+        }).format(totalValue);
+
+        //console.log(
+        //   `${nombre} entan en ${totalValue} BsS y en dolares son ${precioP} $`
+        //)
+
+        const listProduct = document.createElement("div");
+        listProduct.textContent = `${nombre} entan en ${totalValue} BsS y en dolares son ${precioP} $ \n `;
+
+        product.appendChild(listProduct);
+
+        console.log(listProduct);
+
+        const cardConten = document.createElement("div");
+
+        cardConten.innerHTML = ` <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="${img}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">${nombre}</h5>
+    <p class="card-text">Estan en <strong> ${totalValue}  BsS </strong>  <br> En dolares son <strong>  ${precioP} $ </strong> \n </p>
+    
+  </div>
+</div>`;
+
+card.appendChild(cardConten);
+
+
+        
+      });
   }
 }
 let producto = new Producto();
-producto.calcular("Retornables2", 0.84);
+producto.calcular("Impresiones", 0.25 , "https://www8.hp.com/content/dam/sites/es/worldwide/printers/business-printers/section_2_bundle_2_image_2.jpg");
+producto.calcular("Tetas", 0.2 , "https://i.ytimg.com/vi/5_lvRH8WMN4/maxresdefault.jpg");
+producto.calcular("Retornable", 0.84, "https://labatata.com.ve/1664-large_default/coca-cola-retornable-125l.jpg");
